@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
+import "./App.css";
 
 const App = () => {
   const [passlength, setPasslength] = useState(8);
@@ -35,10 +36,14 @@ const App = () => {
     <div className="main">
       <h1>Random Password Generator</h1>
       <div className="container">
-        <input className="display" type="text" readOnly value={password} ref={passwordRef} />
-        <button onClick={copyPasswordToClipboard}>
-          Copy
-        </button>
+        <input
+          className="display"
+          type="text"
+          readOnly
+          value={password}
+          ref={passwordRef}
+        />
+        <button onClick={copyPasswordToClipboard}>Copy</button>
         <div className="button-container">
           <div className="slider">
             <input
