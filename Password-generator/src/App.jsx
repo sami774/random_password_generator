@@ -26,11 +26,11 @@ const App = () => {
       pass += string.charAt(Random);
     }
     setPassword(pass);
-  }, [addnumber, addsymbol, passlength]); // Dependencies for useCallback
+  }, [addnumber, addsymbol, passlength]);
 
   useEffect(() => {
     passwordGenerator();
-  }, [passwordGenerator]); // Depend on the memoized function
+  }, [passwordGenerator]);
 
   return (
     <div className="main">
@@ -53,7 +53,7 @@ const App = () => {
               value={passlength}
               onChange={(e) => setPasslength(Number(e.target.value))}
             />
-            <label>length: {passlength}</label>
+            <label>Length: {passlength}</label>
           </div>
           <div className="number">
             <input
@@ -61,7 +61,7 @@ const App = () => {
               checked={addnumber}
               onChange={() => setAddnumber((prev) => !prev)}
             />
-            <label>add number</label>
+            <label>Add Number</label>
           </div>
           <div className="symbol">
             <input
@@ -69,7 +69,7 @@ const App = () => {
               checked={addsymbol}
               onChange={() => setAddsymbol((prev) => !prev)}
             />
-            <label>add special symbol</label>
+            <label>Add Special Symbol</label>
           </div>
         </div>
       </div>
